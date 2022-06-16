@@ -1,0 +1,99 @@
+{
+  "name": "searchpe",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
+    "@patternfly/patternfly": "^4.194.4",
+    "@patternfly/react-core": "^4.206.2",
+    "@patternfly/react-table": "^4.83.1",
+    "@project-openubl/lib-ui": "^1.7.2",
+    "@redhat-cloud-services/frontend-components-notifications": "^3.2.5",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/react-hooks": "^8.0.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.27",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "axios": "^0.26.1",
+    "dayjs": "^1.11.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.30.0",
+    "react-query": "^3.35.0",
+    "react-redux": "^8.0.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
+    "typesafe-actions": "^5.1.0",
+    "typescript": "^4.6.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "start": "react-scripts -r @cypress/instrument-cra start",
+    "build": "react-scripts build",
+    "build:instrumentation": "CYPRESS_INSTRUMENT_PRODUCTION=true react-scripts -r @cypress/instrument-cra build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prod": "react-scripts build --dest && rsync -a build/* ../resources/META-INF/resources",
+    "ui:start": "node server.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "@cypress/instrument-cra": "^1.4.0",
+    "@types/react-redux": "^7.1.24",
+    "@types/redux-logger": "^3.0.9",
+    "@types/yup": "^0.29.13",
+    "axios-mock-adapter": "^1.20.0",
+    "cypress": "^9.7.0",
+    "http-proxy-middleware": "^2.0.6",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.6.2",
+    "redux-devtools-extension": "^2.13.9",
+    "source-map-explorer": "^2.5.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}

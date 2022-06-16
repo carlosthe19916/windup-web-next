@@ -1,0 +1,18 @@
+name: PR build container images comment by boot
+on: pull_request
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post Container image as PR comment
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            🚀 Container image Preview ✨
+
+            The creation of the container image might take aproximately 10 minutes. Once it is available you can pull it using:
+            ```shell
+            docker pull ghcr.io/${{github.event.pull_request.head.repo.full_name}}/${{github.event.repository.name}}:${{github.event.pull_request.head.ref}}
+            ```
+          repo-token: ${{ secrets.GH_TOKEN }}
