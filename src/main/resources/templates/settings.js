@@ -1,7 +1,6 @@
-window["SEARCHPE_SETTINGS"] = {
+window["APP_SETTINGS"] = {
     defaultAuthMethod: "{defaultAuthMethod}",
     formCookieName: "{formCookieName}",
     oidcLogoutPath: "{oidcLogoutPath}",
-    isAdvancedSearchEnabled: {isAdvancedSearchEnabled},
     applicationVersion: "{applicationVersion}"
 };
